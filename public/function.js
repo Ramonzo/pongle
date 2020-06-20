@@ -13,8 +13,9 @@ function drawScrenary(){
   createScenaryBar(windowWidth/2, windowHeight, windowWidth, borderSize);
   //
   //Draw center bar
-  fill(255);
+  fill(COLORS.WHITE);
   rect(windowWidth/2, windowHeight/2, netSize, windowHeight);
+  //Local function
   function createScenaryBar(x, y, sizeX, sizeY){
     fill(COLORS.WHITE);
     rect(x, y, sizeX, sizeY);
@@ -22,4 +23,6 @@ function drawScrenary(){
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  player.update((windowWidth*playerX)/100);
+  enemy.update((windowWidth*enemyX)/100);
 }

@@ -2,7 +2,9 @@
 //**GAME CONFIGURATIONS**
 //
 var player;
+var playerX = 3;
 var enemy;
+var enemyX = 97;
 var netSize = 10;
 var borderSize = 20;
 //
@@ -10,7 +12,6 @@ var borderSize = 20;
 //
 var COLORS;
 function setup() {
-  noCursor();
   COLORS = {
               'BROW' : color('#54494B'),
               'WHITE' : color('#F1F7ED'),
@@ -18,16 +19,20 @@ function setup() {
               'RED' : color('#B33951'),
               'YELLOW' : color('#E3D081')
             };
-  player = new Racket((windowWidth*3)/100, COLORS.GREEN);
-  enemy = new Racket((windowWidth*97)/100, COLORS.RED);
+  //Set rackets
+  player = new Player((windowWidth*playerX)/100, COLORS.GREEN);
+  enemy = new Enemy((windowWidth*enemyX)/100, COLORS.RED);
+  
   var canvas = createCanvas(windowWidth, windowHeight);
 }
 
 
 function draw() {
   drawScrenary();
+  //Player actions
   player.move(pmouseY);
   player.draw();
+  //Enemy actions
   enemy.move(windowHeight/2);
   enemy.draw();
 }

@@ -6,10 +6,30 @@ class Racket{
     this.y = windowHeight/2;
     this.COLOR = COLOR;
   }
-  draw(){
+  racketModel(){
     rectMode(CENTER);
     fill(this.COLOR);
     rect(this.x, this.y, this.sizeX, this.sizeY);
+  }
+  getPos(){
+    return [this.x, this.y];
+  }
+  getSize(){
+    return [this.sizeX, this.sizeY];
+  }
+  update(x){
+    this.x = x;
+    this.sizeX = (windowWidth*2)/100;
+    this.sizeY = (windowHeight*20)/100;
+    this.y = windowHeight/2;
+  }
+}
+class Player extends Racket{
+  constructor(x, COLOR){
+    super(x, COLOR);
+  }
+  draw(){
+    this.racketModel();
   }
   move(y){
     let targetY = y;
@@ -24,12 +44,15 @@ class Racket{
     }
     return true;
   }
-  collisionEffect(){
+}
+class Enemy extends Racket{
+  constructor(x, COLOR){
+    super(x, COLOR);
   }
-  getPos(){
-    return [this.x, this.y];
+  draw(){
+    this.racketModel();
   }
-  getSize(){
-    return [this.sizeX, this.sizeY];
+  move(y){
+    this.y = y;
   }
 }
