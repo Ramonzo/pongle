@@ -5,6 +5,7 @@ var player;
 var playerX = 3;
 var enemy;
 var enemyX = 97;
+var ball;
 var netSize = 10;
 var borderSize = 20;
 var gameType;
@@ -24,6 +25,7 @@ function setup() {
   //Set rackets
   player = new Player((windowWidth*playerX)/100, COLORS.GREEN);
   enemy = new Enemy((windowWidth*enemyX)/100, COLORS.RED);
+  ball = new Ball(15);
   
   var canvas = createCanvas(windowWidth, windowHeight);
 }
@@ -38,6 +40,9 @@ function draw() {
     //Enemy actions
     enemy.move(windowHeight/2);
     enemy.draw();
+    //Ball actions
+    ball.move();
+    ball.draw();
   }else if(isPlayed == false){
   }
 }

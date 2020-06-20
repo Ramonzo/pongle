@@ -39,7 +39,7 @@ class Player extends Racket{
     }
   }
   collisionScenary(y){
-    if((y-(this.sizeY/2)) >= netSize && (y+(this.sizeY/2)) <= (windowHeight-netSize)){
+    if((y-(this.sizeY/2)) >= borderSize && (y+(this.sizeY/2)) <= (windowHeight-borderSize)){
       return false;
     }
     return true;
