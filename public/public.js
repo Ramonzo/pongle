@@ -7,8 +7,10 @@ var enemy;
 var enemyX = 97;
 var netSize = 10;
 var borderSize = 20;
+var gameType;
+var isPlayed = true;
 //
-//COLORS
+//**COLORS**
 //
 var COLORS;
 function setup() {
@@ -28,11 +30,14 @@ function setup() {
 
 
 function draw() {
-  drawScrenary();
-  //Player actions
-  player.move(pmouseY);
-  player.draw();
-  //Enemy actions
-  enemy.move(windowHeight/2);
-  enemy.draw();
+  if(isPlayed == true){
+    drawScrenary();
+    //Player actions
+    player.move(pmouseY);
+    player.draw();
+    //Enemy actions
+    enemy.move(windowHeight/2);
+    enemy.draw();
+  }else if(isPlayed == false){
+  }
 }
