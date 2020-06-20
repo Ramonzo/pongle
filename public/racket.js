@@ -12,10 +12,24 @@ class Racket{
     rect(this.x, this.y, this.sizeX, this.sizeY);
   }
   move(y){
-    this.y = y;
+    let targetY = y;
+    let newY = this.y + ((targetY-this.y)*0.1);
+    if(!this.collisionScenary(newY)){
+      this.y = newY;
+    }
   }
-  collision(x, y){
+  collisionScenary(y){
+    if((y-(this.sizeY/2)) >= netSize && (y+(this.sizeY/2)) <= (windowHeight-netSize)){
+      return false;
+    }
+    return true;
   }
   collisionEffect(){
+  }
+  getPos(){
+    return [this.x, this.y];
+  }
+  getSize(){
+    return [this.sizeX, this.sizeY];
   }
 }

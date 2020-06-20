@@ -10,6 +10,7 @@ var borderSize = 20;
 //
 var COLORS;
 function setup() {
+  noCursor();
   COLORS = {
               'BROW' : color('#54494B'),
               'WHITE' : color('#F1F7ED'),
@@ -25,7 +26,7 @@ function setup() {
 
 function draw() {
   drawScrenary();
-  player.move(mouseY);
+  player.move(pmouseY);
   player.draw();
   enemy.move(windowHeight/2);
   enemy.draw();
