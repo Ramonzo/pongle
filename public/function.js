@@ -21,6 +21,15 @@ function drawScrenary(){
     rect(x, y, sizeX, sizeY);
   }
 }
+function drawPoints(){
+  //Configure text layout
+  fill(COLORS.WHITE);
+  textSize(16);
+  //This player points
+  text(player.getPoints(), (windowWidth/2)-50, 50);
+  //Enemy points
+  text(enemy.getPoints(), (windowWidth/2)+50, 50);
+}
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   player.update((windowWidth*playerX)/100);

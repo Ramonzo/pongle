@@ -5,6 +5,7 @@ class Racket{
     this.x = x;
     this.y = windowHeight/2;
     this.COLOR = COLOR;
+    this.points = 0;
   }
   racketModel(){
     rectMode(CENTER);
@@ -23,7 +24,14 @@ class Racket{
     this.sizeY = (windowHeight*20)/100;
     this.y = windowHeight/2;
   }
+  addPoint(){
+    this.points++;
+  }
+  getPoints(){
+    return this.points;
+  }
 }
+//Player Class
 class Player extends Racket{
   constructor(x, COLOR){
     super(x, COLOR);
@@ -45,6 +53,7 @@ class Player extends Racket{
     return true;
   }
 }
+//Enemy class
 class Enemy extends Racket{
   constructor(x, COLOR){
     super(x, COLOR);

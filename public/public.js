@@ -25,6 +25,7 @@ function setup() {
   //Set rackets
   player = new Player((windowWidth*playerX)/100, COLORS.GREEN);
   enemy = new Enemy((windowWidth*enemyX)/100, COLORS.RED);
+  //Set ball
   ball = new Ball(15);
   
   var canvas = createCanvas(windowWidth, windowHeight);
@@ -34,6 +35,7 @@ function setup() {
 function draw() {
   if(isPlayed == true){
     drawScrenary();
+    drawPoints()
     //Player actions
     player.move(pmouseY);
     player.draw();

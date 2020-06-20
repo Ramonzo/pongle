@@ -14,8 +14,13 @@ class Ball{
   move(){
     this.x += this.xspeed;
     this.y += this.yspeed;
-    if (this.x + this.size >= windowWidth - borderSize/2 || this.x - this.size <= borderSize/2) {
+    if (this.x + this.size >= windowWidth - borderSize/2) {
       this.xspeed = -this.xspeed;
+      player.addPoint();
+    }
+    if(this.x - this.size <= borderSize/2){
+      this.xspeed = -this.xspeed;
+      enemy.addPoint();
     }
     if (this.y + this.size >= windowHeight - borderSize/2 || this.y - this.size <= borderSize/2) {
       this.yspeed = -this.yspeed;
