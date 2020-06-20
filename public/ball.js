@@ -14,13 +14,18 @@ class Ball{
   move(){
     this.x += this.xspeed;
     this.y += this.yspeed;
-    if (this.x > windowWidth - (this.size+(borderSize/2)) || this.x < (this.size+(borderSize/2))) {
+    if (this.x + this.size >= windowWidth - borderSize/2 || this.x - this.size <= borderSize/2) {
       this.xspeed = -this.xspeed;
     }
-    if (this.y > windowHeight - (this.size+(borderSize/2)) || this.y < (this.size+(borderSize/2))) {
+    if (this.y + this.size >= windowHeight - borderSize/2 || this.y - this.size <= borderSize/2) {
       this.yspeed = -this.yspeed;
     }
-    if(this.x > windowWidth - this.size || this.x < this.size){
+    if(this.y - this.size >= player.getPos()[1] - player.getSize()[1] && 
+    this.y + this.size <= player.getPos()[1] + player.getSize()[1]){
+      if(this.x + this.size >= player.getPos()[0] - player.getSize()[0] && 
+      this.x - this.size <= player.getPos()[0] + player.getSize()[0] && this.xspeed < 0){
+        this.xspeed = -this.xspeed;
+      }
     }
   }
 }

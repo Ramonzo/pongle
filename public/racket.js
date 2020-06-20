@@ -15,7 +15,7 @@ class Racket{
     return [this.x, this.y];
   }
   getSize(){
-    return [this.sizeX, this.sizeY];
+    return [this.sizeX/2, this.sizeY/2];
   }
   update(x){
     this.x = x;
@@ -39,7 +39,7 @@ class Player extends Racket{
     }
   }
   collisionScenary(y){
-    if((y-(this.sizeY/2)) >= borderSize && (y+(this.sizeY/2)) <= (windowHeight-borderSize)){
+    if(y-(this.sizeY/2) >= borderSize/2 && y+(this.sizeY/2) <= windowHeight-(borderSize/2)){
       return false;
     }
     return true;
