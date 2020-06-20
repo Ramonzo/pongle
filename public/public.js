@@ -1,5 +1,5 @@
 //CONFIGURATIONS
-var netSize = 20;
+var netSize = 10;
 var borderSize = 20;
 
 
