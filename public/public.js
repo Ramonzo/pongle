@@ -35,7 +35,7 @@ function setup() {
 function draw() {
   if(isPlayed == true){
     drawScrenary();
-    drawPoints()
+    drawTexts()
     //Player actions
     player.move(pmouseY);
     player.draw();

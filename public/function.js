@@ -21,7 +21,7 @@ function drawScrenary(){
     rect(x, y, sizeX, sizeY);
   }
 }
-function drawPoints(){
+function drawTexts(){
   //Configure text layout
   fill(COLORS.WHITE);
   textSize(16);
@@ -29,6 +29,8 @@ function drawPoints(){
   text(player.getPoints(), (windowWidth/2)-50, 50);
   //Enemy points
   text(enemy.getPoints(), (windowWidth/2)+50, 50);
+  //Velocity text
+  text("Velocity: "+ball.getVel(), (windowWidth/2)-120, windowHeight-50);
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
