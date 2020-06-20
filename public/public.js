@@ -1,3 +1,6 @@
+//CONFIGURATIONS
+var netSize = 20;
+var borderSize = 20;
 
 
 function setup() {
