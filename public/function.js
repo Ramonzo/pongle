@@ -1,6 +1,6 @@
 function drawScrenary(){
   //Configure drawed layout rules
-  background(COLOR.BROW);
+  background(COLORS.BROW);
   noStroke();
   rectMode(CENTER);
   //
@@ -16,7 +16,7 @@ function drawScrenary(){
   fill(255);
   rect(windowWidth/2, windowHeight/2, netSize, windowHeight);
   function createScenaryBar(x, y, sizeX, sizeY){
-    fill(COLOR.WHITE);
+    fill(COLORS.WHITE);
     rect(x, y, sizeX, sizeY);
   }
 }
