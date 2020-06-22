@@ -24,7 +24,9 @@ class Ball{
     }
     if(this.x - this.size <= borderSize/2){
       this.xspeed = -this.xspeed;
-      enemy.addPoint();
+      if(gameMode == 'multi'){
+        enemy.addPoint();
+      }
     }
     if (this.y + this.size >= windowHeight - borderSize/2 || this.y - this.size <= borderSize/2) {
       this.yspeed = -this.yspeed;
